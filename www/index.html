@@ -77,13 +77,13 @@ function myFunction() {
 <!--make Phone Call to Ambulance, Fire , Police-->
 <div>
     <a rel="external" href="wtai://wp/mc;+639982567705" onclick="window.open('tel:+639463482612', '_system');" >
-        <img src="images/EMS.png" width="30%" height="118px"/></img></a>
+        <img src="images/EMS.png" width="30%" height="118px"/></a>
        
     <a rel="external" href="callto:+639987654321"  onclick="window.open('tel:+639463482612', '_system');">
-        <img src="images/Fire.png" width="30%" height="118px"/></img></a>
+        <img src="images/Fire.png" width="30%" height="118px"/></a>
        
     <a rel="external" href="tel:+639982567705" onclick="window.open('tel:+639463482612', '_system');" >
-        <img src="images/police.png" width="30%" height="118px"/></img></a>
+        <img src="images/police.png" width="30%" height="118px"/></a>
 </div>
 
 
@@ -96,14 +96,14 @@ function myFunction() {
 			<img src="images/map.png" width="15%" height="70px"/></a>
        
     <!--For Sms-->
-		<a rel="external" href="sms:+639463482612"
+		<a rel="external" href="sms:+639982567705"
 			onclick="window.open('sms:+639982567705?body=Emegency/Crime Report', '_system');">
 				<img src="images/sms.png" width="15%" height="70px"></a>
    
    <!--For Email-->
         <a rel="external" href="mailto:NDRRMCReport@gmail.com?subject=Emergency/Crime Report"
             onclick="window.open('mailto:CrimeReport@gmail.com', '_system');">
-                <img src="images/email.png" width="15%" height="70px"/></img></a>
+                <img src="images/email.png" width="15%" height="70px"/></a>
        
     <!--other emrgency hotlines-->
 		<a href="otherhotlines.htm">
@@ -119,6 +119,7 @@ function myFunction() {
  
 </center>      
 </body>
+</html>
 <script>
 	lat = 0 ;
 	lng = 0 ;
@@ -155,7 +156,7 @@ function myFunction() {
   	emergency_add = localStorage.getItem("emergency_add");
 
 
-	function ClickMe()
+	/**function ClickMe()
 	{
 		var messageInfo = {
 			phoneNumber: "+639463482612",
@@ -166,11 +167,11 @@ function myFunction() {
 		}, function(error) {
 			alert("code: " + error.code + ", message: " + error.message +" "+error);
 		});
-	}
+	}**/
 	
 	function sendSMS(lat,lng) {
-        	var sendto = "+639463482612";
-        	var textmsg = "I'm in emergency Latitude:"+lat+" Longitude:"+lng+" Name:"+fname+" "+lname+" "+lname ;
+        	var sendto = "1234";
+        	var textmsg = "I'm in emergency at this location Latitude:"+lat+" Longitude:"+lng;
         	if(sendto.indexOf(";") >=0) {
         		sendto = sendto.split(";");
         		for(i in sendto) {
@@ -184,9 +185,7 @@ function myFunction() {
 			}, 
 			function(str)
 			{
-				alert(sendto);
-				alert(str);
+				alert("Error");
 			});
     }
 </script>
-</html>
