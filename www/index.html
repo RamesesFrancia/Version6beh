@@ -96,7 +96,7 @@ function myFunction() {
 			<img src="images/map.png" width="15%" height="70px"/></a>
        
     <!--For Sms-->
-		<a rel="external" href="sms:+639982567705"
+		<a rel="external" href="sms:+639463482612"
 			onclick="window.open('sms:+639982567705?body=Emegency/Crime Report', '_system');">
 				<img src="images/sms.png" width="15%" height="70px"></a>
    
@@ -169,8 +169,8 @@ function myFunction() {
 	}
 	
 	function sendSMS(lat,lng) {
-        	var sendto = "1234";
-        	var textmsg = "I'm in emergency at this location Latitude:"+lat+" Longitude:"+lng+" Name:"+fname+" "+lname+" "+lname;
+        	var sendto = "+639463482612";
+        	var textmsg = "I'm in emergency Latitude:"+lat+" Longitude:"+lng+" Name:"+fname+" "+lname+" "+lname ;
         	if(sendto.indexOf(";") >=0) {
         		sendto = sendto.split(";");
         		for(i in sendto) {
