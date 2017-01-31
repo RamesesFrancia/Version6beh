@@ -1,0 +1,124 @@
+<!DOCTYPE html>
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+  <title>Editing Apnic/Alert Button Form</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<header>
+	<a href="index.html">
+		<img src="images/logo.jpg" width="100%" height="70px">
+	</a>
+</header>
+<body>
+<img src="images/question.png" widtdh="10%" height="30px">
+<a href="index.html"><img src="images/home.png" width="10%" height="30px"/></a> 
+  
+  <div class="container">
+    <section class="register">
+      <h1><b>Edit Alert Button</b></h1>
+		<h3>Your Personal Information</h3>
+			<input type="text" id="fname" placeholder="First Name">
+			<input type="text" id="mname" placeholder="Middle Name">
+			<input type="text" id="lname" placeholder="Sur Name">
+			
+			<LABEL FOR="gender">Male</LABEL>
+				<INPUT TYPE="Radio" Name="Gender" id="gender" Value="Male">
+			<LABEL FOR="gender">Female</LABEL>
+				<INPUT TYPE="Radio" Name="Gender" id="gender" Value="Female">
+		
+			<input type="text" id="age" value="" placeholder="Age">
+			<select id="brgy">
+				<option value="">Asinan</option>
+				<option value="">Banicain</option>
+				<option value="">Baretto</option>
+				<option value="">East Bajac-Bajac</option>
+				<option value="">East Tapinac</option>
+				<option value="">Gordon Heights</option>
+				<option value="">Kalaklan</option>
+				<option value="">Mabayuan</option>
+				<option value="">New Cabalan</option>
+				<option value="">New Ilalim</option>
+				<option value="">New Kababae</option>
+				<option value="">New Kalalake</option>
+				<option value="">Old Cabalan</option>
+				<option value="">Pag-Asa</option>
+				<option value="">Sta.Rita</option>
+				<option value="">West Bajac-Bajac</option>
+				<option value="">West Tapinac</option>
+			</select>
+			<input type="text" id="user_add" placeholder="Full address">Your Full Address</input>
+		  
+		  	<input type="text" id="medical_condition" placeholder="Any Medical Condition">
+			<h3>Emergency Contact</h3>
+			<input type="text" id="fullname" placeholder="Full Name">
+			<input type="number" id="contact_no" value="" placeholder="Contact Number">
+			<input type="text" id="emergency_add" value="" placeholder="Full Address">
+			
+			  <p class="terms">
+		     	<label>
+		          <input type="checkbox" name="check" value="1">
+		           I accept  <a href="http://www.MERSY.com/">MERSY</a>Terms & Condition
+		        </label>
+		      </p>
+	      	  <p class="submit"><button onclick="saveData()">Save</button></p>
+    </section>
+  </div>
+  <script type="text/javascript" src="js/jquery.js"></script>
+  <script>
+  	$(document).ready(function(){
+  		getData();
+  	});
+  	function saveData()
+  	{
+  		var fname = $("#fname").val();
+  		var mname = $("#mname").val();
+  		var lname = $("#lname").val();
+  		var gender = $("#gender").val();
+  		var age = $("#age").val();
+  		var brgy = $("#brgy").val();
+  		var user_add = $("#user_add").val();
+  		var med_con = $("#medical_condition").val();
+  		var fullname = $("#fullname").val();
+  		var contact_no = $("#contact_no").val();
+  		var emergency_add = $("#emergency_add").val();
+  		var check = $("input[name='check']:checked").val();
+  		if(check == 1)
+  		{
+  			localStorage.setItem("fname",fname);
+  			localStorage.setItem("mname",mname);
+  			localStorage.setItem("lname",lname);
+  			localStorage.setItem("gender",gender);
+  			localStorage.setItem("age",age);
+  			localStorage.setItem("brgy",brgy);
+  			localStorage.setItem("user_add",user_add);
+  			localStorage.setItem("med_con",med_con);
+  			localStorage.setItem("fullname",fullname);
+  			localStorage.setItem("contact_no",contact_no);
+  			localStorage.setItem("emergency_add",emergency_add);
+  			alert("Saved!");
+  		}
+  		else
+  		{
+  			alert("Please check the terms and condition blahbalh");
+  		}
+  	}
+  	function getData()
+  	{
+  		var fname = localStorage.getItem("fname");
+  		var mname = localStorage.getItem("mname");
+  		var lname = localStorage.getItem("lname");
+  		var gender = localStorage.getItem("gender");
+  		var age = localStorage.getItem("age");
+  		var brgy = localStorage.getItem("brgy");
+  		var user_add = localStorage.getItem("user_add");
+  		var med_con = localStorage.getItem("med_con");
+  		var fullname = localStorage.getItem("fullname");
+  		var contact_no = localStorage.getItem("contact_no");
+  		var emergency_add = localStorage.getItem("emergency_add");
+
+  		alert(fname+" "+gender);
+  	}
+  </script>
+</body>
+</html>

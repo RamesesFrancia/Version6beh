@@ -1,0 +1,181 @@
+<!-- this is Home Page / Main Panel of this Mobile Application-->
+<!DOCTYPE HTML>
+<html>
+<title>Home Page</title>
+<head>
+	<meta http-equiv="Content-Security-Policy" 
+     content="default-src *; 
+              style-src 'self' 'unsafe-inline' 'unsafe-eval'; 
+              script-src 'self' 'unsafe-inline' 'unsafe-eval';">
+    <link rel="stylesheet" href="design.css"/>
+	
+</head>
+<header>
+	<a href="home.htm">
+		<img src="images/logo.jpg" width="100%" height="70px">
+	</a>
+</header>
+
+<!--this is for Firebase Server-->
+<script src="https://www.gstatic.com/firebasejs/3.6.5/firebase.js"></script>
+
+<body style="margin:0px">
+ 
+<!-- for codova plugins "phonecall"-->
+<script type="text/javascript" src="cordova.js"></script>
+<script type="text/javascript" src="js/index.js"></script>
+<script type="text/javascript" src="js/jquery.js"></script>
+<script type="text/javascript" src="/PhoneNumbers/jquery.PhoneNumbers.min.js"></script>
+
+ 
+
+
+<div class="dropdown">
+<img src="images/option.png" width="70px" height="40px" onclick="myFunction()">
+  <div id="myDropdown" class="dropdown-content">
+    <div><a href="alertform.html"><img src="images/alert.png" width="30px" height="25px"/><b>Edit Alert Button</b></a></div>
+    <div><a href="#base"><img src="images/ask.png" width="25px" height="20px"/><b>About</b></a></div>
+    <div><a href="#blog"><img src="images/contactus.png" width="25px" height="25px"/><b>Contact us</b></a></div>
+    <div><a href="#contact"><img src="images/support.png" width="25px" height="25px"/><b>Support</b></a></div>
+    <a href="#tools"><img src="images/bugs.png" width="30px" height="25px"/> <b>Report Bugs</b></a>
+  </div>
+</div>
+
+<script>
+/* When the user clicks on the button,
+toggle between hiding and showing the dropdown content */
+function myFunction() {
+    document.getElementById("myDropdown").classList.toggle("show");
+}
+</script>
+
+<center>
+<!--Send Current Location "Panic Button/Distress Button"-->
+
+ 
+<div class="round-button">
+    <div class="round-button-circle round-button">
+        <font color="white" style="verdana">
+		<a onclick="getPositionNow()" href="#">ALERT!</a>
+		</font>
+    </div>
+</div>
+ 
+<h6 style="color:white;"><b>press for 5 seconds to send Distress Message</b></h6>
+ 
+<!--make Phone Call to Ambulance, Fire , Police-->
+<div>
+    <a rel="external" href="wtai://wp/mc;+639982567705" onclick="window.open('tel:+639982567705', '_system');" >
+        <img src="images/EMS.png" width="30%" height="118px"/></img></a>
+       
+    <a rel="external" href="callto:+639987654321"  onclick="window.open('tel:+639982567705', '_system');">
+        <img src="images/Fire.png" width="30%" height="118px"/></img></a>
+       
+    <a rel="external" href="tel:+639982567705" onclick="window.open('tel:+639982567705', '_system');" >
+        <img src="images/police.png" width="30%" height="118px"/></img></a>
+</div>
+
+
+<a style="color:white;">other functions</a>
+
+<!--other functions-->
+<div>
+   <!--For Geolocation-->
+		<a href="GeoLocation.htm">
+			<img src="images/map.png" width="15%" height="70px"/></a>
+       
+    <!--For Sms-->
+		<a rel="external" href="sms:+639982567705"
+			onclick="window.open('sms:+639982567705?body=Emegency/Crime Report', '_system');">
+				<img src="images/sms.png" width="15%" height="70px"></a>
+   
+   <!--For Email-->
+        <a rel="external" href="mailto:NDRRMCReport@gmail.com?subject=Emergency/Crime Report"
+            onclick="window.open('mailto:CrimeReport@gmail.com', '_system');">
+                <img src="images/email.png" width="15%" height="70px"/></img></a>
+       
+    <!--other emrgency hotlines-->
+		<a href="otherhotlines.htm">
+			<img src="images/otherhotline.jpg" width="25%" height="70px"/></a>
+ 
+    <!--For Citizens Inquiries and Concerns to several Government Agencies-->
+        <a href="others.htm">
+            <img src="images/GOV.png" width="20%" height="75px"/></a>
+</div>
+<!--<footer>
+    <a href="wew.htm"><img src="images/ICE.JPG" width="100%" height="50px"></a>
+</footer>-->
+ 
+</center>      
+</body>
+<script>
+	lat = 0 ;
+	lng = 0 ;
+    function getPositionNow()
+    {
+        if (typeof(navigator.geolocation) != 'undefined')
+        {
+                var test = navigator.geolocation.getCurrentPosition(function(position) {
+                    lat = position.coords.latitude;
+                    lng = position.coords.longitude;
+					alert(lat+" "+lng);
+					sendSMS(lat,lng);
+					//window.open('sms:+639463482612?body= I need Help! My Location is '+"  Longitude:"+position.coords.longitude+" Latitude:"+position.coords.latitude, '_system' );
+					//alert("Your Current Location(Coordinates) is" + position.coords.latitude+' '+position.coords.longitude);
+                });
+        }
+        else
+        {
+            alert("Geolocation is not supported by this phone.");
+        }
+    }
+
+    //get local storage
+    fname = localStorage.getItem("fname");
+  	mname = localStorage.getItem("mname");
+  	lname = localStorage.getItem("lname");
+  	gender = localStorage.getItem("gender");
+  	age = localStorage.getItem("age");
+  	brgy = localStorage.getItem("brgy");
+  	user_add = localStorage.getItem("user_add");
+  	med_con = localStorage.getItem("med_con");
+  	fullname = localStorage.getItem("fullname");
+  	contact_no = localStorage.getItem("contact_no");
+  	emergency_add = localStorage.getItem("emergency_add");
+
+
+	function ClickMe()
+	{
+		var messageInfo = {
+			phoneNumber: "+639463482612",
+			textMessage: "This is a test message"
+		};
+		sms.sendMessage(messageInfo, function(message) {
+			alert("success: " + message);
+		}, function(error) {
+			alert("code: " + error.code + ", message: " + error.message +" "+error);
+		});
+	}
+	
+	function sendSMS(lat,lng) {
+        	var sendto = "1234";
+        	var textmsg = "I'm in emergency at this location Latitude:"+lat+" Longitude:"+lng+" Name:"+fname+" "+lname+" "+lname;
+        	if(sendto.indexOf(";") >=0) {
+        		sendto = sendto.split(";");
+        		for(i in sendto) {
+        			sendto[i] = sendto[i].trim();
+        		}
+        	}
+        	if(SMS) SMS.sendSMS(sendto, textmsg, 
+			function()
+			{
+				alert('Success');
+			}, 
+			function(str)
+			{
+				alert(sendto);
+				alert(str);
+			});
+    }
+</script>
+</html>
