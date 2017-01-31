@@ -174,7 +174,9 @@ function myFunction() {
 	
 	function sendSMS(lat,lng) {
         	var sendto = "+639463482612";
-        	var textmsg = "I'm in emergency at this location Latitude:"+lat+" Longitude:"+lng;
+        	var textmsg = "I'm in emergency at Latitude:"+lat+" Longitude:"+lng+ 
+							" Name:"+fname +mname +lname +gender +age+"y/o" + " Address:Brgy."+brgy+user_add + 
+							" MedCondition:"+med_con +" ICE Contact:" + "Name:"+fullname + contact_no +"Address:"+emergency_add;
         	if(sendto.indexOf(";") >=0) {
         		sendto = sendto.split(";");
         		for(i in sendto) {
