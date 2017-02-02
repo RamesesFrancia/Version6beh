@@ -169,10 +169,9 @@ function myFunction() {
 		});
 	}
 	
-	function sendSMS(lat,lng) {
-        	var sendto = "+639463482612";
-        	var textmsg = "I'm in emergency at this location Latitude:"+lat+" Longitude:"+lng+" Name:"+fname+" "+mname+" "+lname+"
-				"+gender+" "age:"+age+" "+user_add+" "Medical condition:"+med_con+" "ICE contact:"+fullname+" "ContactNumber:"+contact_no+"  "+emergency_add";
+		function sendSMS(lat,lng) {
+        	var sendto = "1234";
+        	var textmsg = "I'm in emergency at this location Latitude:"+lat+" Longitude:"+lng+" Name:"+fname+" "+lname+" "+lname;
         	if(sendto.indexOf(";") >=0) {
         		sendto = sendto.split(";");
         		for(i in sendto) {
@@ -186,7 +185,8 @@ function myFunction() {
 			}, 
 			function(str)
 			{
-				alert("Failde");
+				alert(sendto);
+				alert(str);
 			});
     }
 </script>
