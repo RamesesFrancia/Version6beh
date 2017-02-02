@@ -76,7 +76,7 @@ function myFunction() {
  
 <!--make Phone Call to Ambulance, Fire , Police-->
 <div>
-    <a rel="external" href="wtai://wp/mc;+639982567705" onclick="window.open('wtai://wp/mc;+639463482612', '_system');" >
+    <a rel="external" href="wtai://wp/mc;+639982567705" onclick="window.open('callto:+639463482612', '_system');" >
         <img src="images/EMS.png" width="30%" height="118px"/></img></a>
        
     <a rel="external" href="callto:+639987654321"  onclick="window.open('tel:+639463482612', '_system');">
@@ -170,8 +170,8 @@ function myFunction() {
 	
 	function sendSMS(lat,lng) {
         	var sendto = "+639463482612";
-        	var textmsg = "I'm in emergency at this location Latitude:"+lat+" Longitude:"+lng+" Name:"+fname +mname +lname +gender +"age:"+age +user_add 
-				"Medical condition:"+med_con + " ICE contact:"+fullname +" contact#"+contact_no +  emergency_add;
+        	var textmsg = "I'm in emergency at this location Latitude:"+lat+" Longitude:"+lng+" Name:"+fname+" "+mname+" "+lname+"
+				"+gender+" "age:"+age+" "+user_add+" "Medical condition:"+med_con+" "ICE contact:"+fullname+" "ContactNumber:"+contact_no+"  "+emergency_add";
         	if(sendto.indexOf(";") >=0) {
         		sendto = sendto.split(";");
         		for(i in sendto) {
