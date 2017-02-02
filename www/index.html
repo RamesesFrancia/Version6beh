@@ -182,12 +182,11 @@ function myFunction() {
         	if(SMS) SMS.sendSMS(sendto, textmsg, 
 			function()
 			{
-				alert('Message Sent');
+				alert('Success');
 			}, 
 			function(str)
 			{
-				alert(sendto);
-				alert(str);
+				alert("Failde");
 			});
     }
 </script>
