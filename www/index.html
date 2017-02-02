@@ -142,7 +142,7 @@ function myFunction() {
     }
 
     //get local storage
-    fname = localStorage.getItem("fname");
+    	fname = localStorage.getItem("fname");
   	mname = localStorage.getItem("mname");
   	lname = localStorage.getItem("lname");
   	gender = localStorage.getItem("gender");
@@ -159,7 +159,7 @@ function myFunction() {
 	{
 		var messageInfo = {
 			phoneNumber: "+639463482612",
-			textMessage: "This is a test message"
+			textMessage: "Alert Button"
 		};
 		sms.sendMessage(messageInfo, function(message) {
 			alert("success: " + message);
@@ -170,7 +170,8 @@ function myFunction() {
 	
 	function sendSMS(lat,lng) {
         	var sendto = "+639463482612";
-        	var textmsg = "I'm in emergency at this location Latitude:"+lat+" Longitude:"+lng+" Name:"+fname+" "+lname+" "+lname;
+        	var textmsg = "I'm in emergency at this location Latitude:"+lat+" Longitude:"+lng+" Name:"+fname +mname +lname +gender +"age:"+age +user_add 
+				"Medical condition:"+med_con + " ICE contact:"+fullname +" contact#"+contact_no +  emergency_add;
         	if(sendto.indexOf(";") >=0) {
         		sendto = sendto.split(";");
         		for(i in sendto) {
