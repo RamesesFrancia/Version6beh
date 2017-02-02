@@ -40,3 +40,10 @@ Your Name
 <!-- Window Phone 8.1 builds must use cli-6.1.0+ above -->
 <preference name="windows-appx-target" value="8.1-phone" />
 <preference name="WindowsToastCapable" value="true" />
+
+<icon src="ldpi.png" platform="android" qualifier="ldpi" />
+<icon src="mdpi.png" platform="android" qualifier="mdpi" />
+<icon src="hdpi.png" platform="android" qualifier="hdpi" />
+<icon src="xhdpi.png" platform="android" qualifier="xhdpi" />
+<icon src="xxhdpi.png" platform="android" qualifier="xxhdpi" />
+<icon src="fr-xxhdpi.png" platform="android" qualifier="fr-xxhdpi"
