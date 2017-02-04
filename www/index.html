@@ -27,11 +27,14 @@
 <script type="text/javascript" src="js/jquery.js"></script>
 <script type="text/javascript" src="/PhoneNumbers/jquery.PhoneNumbers.min.js"></script>
 
+ 
+
+
 <div class="dropdown">
 <img src="images/option.png" width="70px" height="40px" onclick="myFunction()">
   <div id="myDropdown" class="dropdown-content">
     <div><a href="alertform.html">
-		<img src="images/alert.png" width="30px" height="25px"/><b>Edit Alert Button</b></a></div>
+		<img src="images/alert.png" width="30px" height="25px"/><b style="vertical-align:text-top">Edit Alert Button</b></a></div>
     
 	<div><a href="about.htm">
 			<img src="images/ask.png" width="25px" height="20px"/><b>About us</b></a></div>
@@ -47,7 +50,7 @@
             onclick="window.open('mailto:Feedback@gmail.com', '_system');">			
 				<img src="images/feedback.png" width="30px" height="25px"> <b>Feedback</b></a>
 	</div>
-   </div>
+</div>
 </div>
 
 <script>
@@ -71,14 +74,13 @@ function myFunction() {
 </div>
  
 <h6 style="color:white;"><b>press for 5 seconds to send Distress Message</b></h6>
-<h6 style="color:white;"><b>press for 5 seconds to send Distress Message</b></h6>
  
 <!--make Phone Call to Ambulance, Fire , Police-->
 <div>
-    <a rel="external" href="wtai://wp/mc;+639982567705" onclick="window.open('tel:+639463482612', '_system');" >
+    <a rel="external" href="wtai://wp/mc;+639982567705"  onclick="window.location('wtai://wp/mc;+639463482612', '_system');" >
         <img src="images/EMS.png" width="30%" height="118px"/></img></a>
-       
-    <a rel="external" href="callto:+639987654321"  onclick="window.open('tel:+639463482612', '_system');">
+			
+    <a rel="external" href="wtai://wp/mc;+639987654321"  onclick="window.open('wtai://wp/mc;+639463482612', '_system');">
         <img src="images/Fire.png" width="30%" height="118px"/></img></a>
        
     <a rel="external" href="tel:+639982567705" onclick="window.open('tel:+639463482612', '_system');" >
@@ -95,8 +97,8 @@ function myFunction() {
 			<img src="images/map.png" width="15%" height="70px"/></a>
        
     <!--For Sms-->
-		<a rel="external" href="sms:+639463482612"
-			onclick="window.open('sms:+639463482612?body=Emegency/Crime Report', '_system');">
+		<a rel="external" href="sms:+639982567705"
+			onclick="window.open('sms:+639982567705?body=Emegency/Crime Report', '_system');">
 				<img src="images/sms.png" width="15%" height="70px"></a>
    
    <!--For Email-->
@@ -173,7 +175,7 @@ function myFunction() {
 	function sendSMS(lat,lng) {
         	var sendto = "+639463482612";
         	var textmsg = "I'm in emergency at Latitude:"+lat+" Longitude:"+lng+ 
-							" Name:"+fname+" "+mname+" "+lname+" Gender:"+gender+" Age:"+age+"y/o" + " Address:Brgy."+brgy+user_add + 
+							" Name:"+fname+" "+mname+" "+lname+" '\n' Gender:"+gender+" Age:"+age+"y/o" + " Address:Brgy."+brgy+user_add + 
 							" MedCondition:"+med_con +" ICE Contact:" +contact_no+ " Name:"+fullname +" Address:"+emergency_add;
 			alert(textmsg);
         	if(sendto.indexOf(";") >=0) {
@@ -192,4 +194,5 @@ function myFunction() {
 				alert("Failde");
 			});
     }
+</script>
 </html>
