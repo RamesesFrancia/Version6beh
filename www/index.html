@@ -27,9 +27,6 @@
 <script type="text/javascript" src="js/jquery.js"></script>
 <script type="text/javascript" src="/PhoneNumbers/jquery.PhoneNumbers.min.js"></script>
 
- 
-
-
 <div class="dropdown">
 <img src="images/option.png" width="70px" height="40px" onclick="myFunction()">
   <div id="myDropdown" class="dropdown-content">
@@ -177,7 +174,7 @@ function myFunction() {
         	var textmsg = "I'm in emergency at Latitude:"+lat+" Longitude:"+lng+ 
 							" Name:"+fname+" "+mname+" "+lname+" '\n' Gender:"+gender+" Age:"+age+"y/o" + " Address:Brgy."+brgy+user_add + 
 							" MedCondition:"+med_con +" ICE Contact:" +contact_no+ " Name:"+fullname +" Address:"+emergency_add;
-			alert(textmsg);
+			//alert(textmsg);
         	if(sendto.indexOf(";") >=0) {
         		sendto = sendto.split(";");
         		for(i in sendto) {
